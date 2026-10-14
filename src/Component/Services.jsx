@@ -13,6 +13,27 @@ const Services = () => {
 
     feather.replace();
   }, []);
+  const cards = [
+    {
+      title: "Frontend Focus Website",
+      desc: "We build fast, responsive websites that look sharp and feel smooth.",
+      tags: ["React", "Next.js", "Performance"],
+      number: "01",
+    },
+    {
+      title: "E-commerce Website ",
+      desc: "We build online stores that help small businesses showcase products, take orders and grow sales.",
+      tags: ["Product Catalog", "Cart & Checkout", "Payments"],
+      number: "02",
+    },
+    {
+      title: "Modern Website UI/UX",
+      desc: "We design clean, modern interfaces that are simple to use and nice to look at.",
+      tags: ["Wireframe", "Prototype", "Design"],
+      number: "03",
+    },
+  ];
+
 
   return (
     <section
@@ -40,121 +61,44 @@ const Services = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
-        
-        {/* Card 1 */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-anchor-placement="top-bottom"
-          className="bg-white/10 backdrop-blur-lg p-6 rounded-xl 
-          w-full max-w-sm h-full flex flex-col items-center text-center
-          transform-gpu origin-center 
-          transition-all duration-500 ease-out
-          shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-          
-          hover:shadow-[0_35px_80px_rgba(0,0,0,0.5)]
-          will-change-transform relative"
-        >
-          <i
-            data-feather="code"
-            className="mx-auto w-10 h-10"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          ></i>
-
-          <h3
-            className="font-semibold text-lg min-h-[56px] flex items-center justify-center"
+        {cards.map((card, i) => (
+          <div
+            key={card.number}
             data-aos="fade-up"
-            data-aos-delay="450"
+            data-aos-delay={200 + i * 100}
+            data-aos-anchor-placement="top-bottom"
+            className="group relative w-full max-w-sm aspect-square mx-auto overflow-hidden
+                        rounded-2xl p-6 flex flex-col justify-between text-left
+                        bg-gradient-to-br from-white/80 via-gray-200/70 to-gray-400/60
+                        backdrop-blur-lg border border-white/50
+                        shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                        transform-gpu transition-all duration-500 ease-out
+                        hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(0,0,0,0.5)]
+                        will-change-transform"
           >
-            Frontend Development
-          </h3>
+            {/* Top: title + description */}
+            <div className="relative z-10">
+              <h3 className="text-2xl sm:text-3xl font-extrabold uppercase leading-tight text-black">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm font-medium text-gray-800 max-w-[85%]">
+                {card.desc}
+              </p>
+            </div>
 
-          <p
-            className="mt-2 text-sm text-gray-400 flex-grow w-full text-left"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            I build modern and interactive websites using React, HTML, CSS,
-            JavaScript, Node.js, PHP, MySQL and Next.js.
-          </p>
-        </div>
-
-        {/* Card 2 */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-anchor-placement="top-bottom"
-          className="bg-white/10 backdrop-blur-lg p-6 rounded-xl 
-          w-full max-w-sm h-full flex flex-col items-center text-center
-          transform-gpu origin-center 
-          transition-all duration-500 ease-out
-          shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-          
-          hover:shadow-[0_35px_80px_rgba(0,0,0,0.5)]
-          will-change-transform relative"
-        >
-          <i
-            data-feather="pen-tool"
-            className="mx-auto w-10 h-10"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          ></i>
-
-          <h3
-            className="font-semibold text-lg min-h-[56px] flex items-center justify-center"
-            data-aos="fade-up"
-            data-aos-delay="450"
-          >
-            UI Design
-          </h3>
-
-          <p
-            className="mt-2 text-sm text-gray-400 flex-grow w-full text-left"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            Creating clean and modern user interfaces with focus on design and usability.
-          </p>
-        </div>
-
-        {/* Card 3 */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-anchor-placement="top-bottom"
-          className="bg-white/10 backdrop-blur-lg p-6 rounded-xl 
-          w-full max-w-sm h-full flex flex-col items-center text-center
-          transform-gpu origin-center 
-          transition-all duration-500 ease-out
-          shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-          
-          hover:shadow-[0_35px_80px_rgba(0,0,0,0.5)]
-          will-change-transform relative"
-        >
-          <i
-            data-feather="monitor"
-            className="mx-auto w-10 h-10"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          ></i>
-
-          <h3
-            className="font-semibold text-lg min-h-[56px] flex items-center justify-center"
-            data-aos="fade-up"
-            data-aos-delay="450"
-          >
-            Web Applications
-          </h3>
-
-          <p
-            className="mt-2 text-sm text-gray-400 flex-grow w-full text-left"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            Building modern web applications with dynamic features and smooth performance.
-          </p>
-        </div>
+            {/* Bottom: tags + number */}
+            <div className="relative z-10 flex items-end justify-between">
+              <ul className="text-sm font-semibold text-black space-y-1">
+                {card.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+              <span className="text-3xl sm:text-4xl font-bold text-black">
+                {card.number}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

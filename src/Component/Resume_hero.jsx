@@ -53,7 +53,7 @@ const Resume_hero = () => {
     <section className="  w-full !bg-gradient-to-l !from-[#363d47] !to-[#030303] text-white">
       <div className="flex items-center pt-14 md:pt-16 lg:pt-20 pb-0 px-6 sm:px-10 md:px-16 lg:px-24">
         <div className="grid md:grid-cols-2 gap-12 items-center w-full">
-          
+
           {/* LEFT */}
           <div className="order-2 md:order-1">
             <h1 className="text-xs sm:text-sm md:text-base font-semibold tracking-wide mb-1 text-white/70">
@@ -79,6 +79,40 @@ const Resume_hero = () => {
             </p>
 
             <div className="flex items-center gap-3">
+
+
+
+              <a
+                href="/resume.pdf"
+                download="Priyanshu-Resume.pdf"
+                style={{ "--content": "'Download Resume'" }}
+                className="resume-btn relative inline-flex items-center justify-center gap-3 rounded-3xl overflow-hidden rounded-md bg-blue-700 px-6 py-3 text-lg font-black uppercase text-blue-100 transition hover:bg-blue-800"
+              >
+                <span className="resume-bubbles" aria-hidden="true" />
+
+                <span className="resume-left" aria-hidden="true" />
+                <span className="resume-right" aria-hidden="true" />
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="relative z-10 shrink-0"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M12 15V3" />
+                </svg>
+
+                <span className="relative z-10">Download Resume</span>
+              </a>
+
               <a href="https://github.com/Priyanshu-Biswas" className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition">
                 <i className="fa-brands fa-github"></i>
               </a>
@@ -88,6 +122,8 @@ const Resume_hero = () => {
               <a href="https://www.facebook.com/share/18nN7foYUN/" className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition">
                 <i className="fa-brands fa-facebook"></i>
               </a>
+
+
             </div>
           </div>
 
@@ -121,6 +157,78 @@ const Resume_hero = () => {
           }
         `}
       </style>
+
+      <style>{`
+    .resume-btn {
+      --text-color: hsl(210, 50%, 85%);
+      --shadow-color: hsla(210, 40%, 52%, 0.4);
+      --bg-color: #141218;
+      isolation: isolate;
+      box-shadow: var(--shadow-color) 2px 2px 22px;
+      text-decoration: none;
+    }
+
+    .resume-bubbles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.6;
+      background:
+        radial-gradient(circle at 20% 35%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+        radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+        radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+      animation: resume-bubbles 5s linear infinite;
+    }
+
+    @keyframes resume-bubbles {
+      from { background-position: 0 0; }
+      to { background-position: 0 -100px; }
+    }
+
+    .resume-left,
+    .resume-right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .resume-left { left: 0; }
+    .resume-right { right: 0; }
+
+    .resume-right::after {
+      content: var(--content);
+      position: absolute;
+      top: -30px;
+      left: -100%;
+      width: 200%;
+      padding: 40px 0;
+      white-space: nowrap;
+      text-align: center;
+      color: transparent;
+      background: var(--bg-color);
+      pointer-events: none;
+      transform: translateY(-90%);
+      transition: transform 0.4s ease-out;
+    }
+
+    .resume-btn:hover .resume-right::after {
+      transform: translateY(-47%);
+    }
+
+    .resume-btn:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .resume-bubbles { animation: none; }
+      .resume-right::after { transition: none; }
+    }
+  `}</style>
     </section>
   );
 };

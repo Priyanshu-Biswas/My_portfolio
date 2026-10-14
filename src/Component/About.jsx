@@ -125,15 +125,17 @@ const About = () => {
                 </button>
               </Link>
 
-              <button
-                className="shadow-[8px_8px_25px_rgba(0,0,0,0.5)] 
-                hover:shadow-[14px_14px_40px_rgba(0,0,0,0.8)] 
-                transition duration-300 px-4 sm:px-6 py-2 border border-black text-black rounded-xl 
-                hover:bg-black hover:text-white transition duration-500 text-sm sm:text-base"
+              <Link
+                to="/blog"
+                className="inline-block shadow-[8px_8px_25px_rgba(0,0,0,0.5)]
+  hover:shadow-[14px_14px_40px_rgba(0,0,0,0.8)]
+  transition duration-300 px-4 sm:px-6 py-2 border border-black text-black rounded-xl
+  hover:bg-black hover:text-white duration-500 text-sm sm:text-base"
                 data-aos="fade-up"
-                data-aos-delay="650">
-                Certificates
-              </button>
+                data-aos-delay="650"
+              >
+                Blog
+              </Link>
 
 
             </div>
