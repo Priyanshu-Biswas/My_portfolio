@@ -78,15 +78,14 @@ const Resume_hero = () => {
               Turning Figma designs into clean, production-ready code.
             </p>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-3">
 
-
-
+              {/* Line 1 on phone: download button only */}
               <a
                 href="/resume.pdf"
                 download="Priyanshu-Resume.pdf"
                 style={{ "--content": "'Download Resume'" }}
-                className="resume-btn relative inline-flex !rounded-3xl items-center justify-center gap-3  overflow-hidden rounded-md bg-blue-700 px-6 py-3 text-lg font-black uppercase text-blue-100 transition hover:bg-blue-800"
+                className="resume-btn relative inline-flex w-full sm:w-auto !rounded-3xl items-center justify-center gap-3 overflow-hidden rounded-md bg-blue-700 px-6 py-3 text-lg font-black uppercase text-blue-100 transition hover:bg-blue-800"
               >
                 <span className="resume-bubbles" aria-hidden="true" />
 
@@ -113,17 +112,27 @@ const Resume_hero = () => {
                 <span className="relative z-10">Download Resume</span>
               </a>
 
-              <a href="https://github.com/Priyanshu-Biswas" className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition">
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/priyanshu-biswas-9a323235a?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition">
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a href="https://www.facebook.com/share/18nN7foYUN/" className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition">
-                <i className="fa-brands fa-facebook"></i>
-              </a>
-
-
+              {/* Line 2 on phone: social icons */}
+              <div className="flex items-center justify-center gap-3">
+                <a
+                  href="https://github.com/Priyanshu-Biswas"
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/priyanshu-biswas-9a323235a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition"
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/share/18nN7foYUN/"
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:scale-110 transition"
+                >
+                  <i className="fa-brands fa-facebook"></i>
+                </a>
+              </div>
             </div>
           </div>
 
