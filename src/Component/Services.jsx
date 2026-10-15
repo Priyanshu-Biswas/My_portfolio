@@ -60,21 +60,21 @@ const Services = () => {
         <div className="w-20 h-[3px] bg-white/40 rounded-full"></div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 justify-center">
         {cards.map((card, i) => (
           <div
             key={card.number}
             data-aos="fade-up"
             data-aos-delay={200 + i * 100}
             data-aos-anchor-placement="top-bottom"
-            className="group relative w-full max-w-sm aspect-square mx-auto overflow-hidden
-                        rounded-2xl p-6 flex flex-col justify-between text-left
-                        bg-gradient-to-br from-white/80 via-gray-200/70 to-gray-400/60
-                        backdrop-blur-lg border border-white/50
-                        shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-                        transform-gpu transition-all duration-500 ease-out
-                        hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(0,0,0,0.5)]
-                        will-change-transform"
+            className="group relative w-full max-w-none sm:max-w-sm aspect-[4/4.5] sm:aspect-square mx-0 sm:mx-auto overflow-hidden
+                  rounded-2xl p-6 flex flex-col justify-between text-left
+                  bg-gradient-to-br from-white/80 via-gray-200/70 to-gray-400/60
+                  backdrop-blur-lg border border-white/50
+                  shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                  transform-gpu transition-all duration-500 ease-out
+                  hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(0,0,0,0.5)]
+                  will-change-transform"
           >
             {/* Top: title + description */}
             <div className="relative z-10">
