@@ -46,9 +46,7 @@ function Blog() {
       <div className="mx-auto max-w-7xl">
         {/* Page Heading */}
         <header className="mb-12 text-center">
-          <p className="mb-3 font-semibold uppercase tracking-widest text-green-600">
-            My Blog
-          </p>
+          
 
           <h1 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
             Thoughts, Tutorials & Experiences

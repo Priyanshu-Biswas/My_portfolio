@@ -86,7 +86,7 @@ const Resume_hero = () => {
                 href="/resume.pdf"
                 download="Priyanshu-Resume.pdf"
                 style={{ "--content": "'Download Resume'" }}
-                className="resume-btn relative inline-flex items-center justify-center gap-3 rounded-3xl overflow-hidden rounded-md bg-blue-700 px-6 py-3 text-lg font-black uppercase text-blue-100 transition hover:bg-blue-800"
+                className="resume-btn relative inline-flex !rounded-3xl items-center justify-center gap-3  overflow-hidden rounded-md bg-blue-700 px-6 py-3 text-lg font-black uppercase text-blue-100 transition hover:bg-blue-800"
               >
                 <span className="resume-bubbles" aria-hidden="true" />
 
