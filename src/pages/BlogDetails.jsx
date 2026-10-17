@@ -1,6 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+
 import {
   getBlogBySlug,
   likeBlog,
@@ -90,10 +94,10 @@ function BlogDetails() {
 
   const formattedDate = blog.publishedAt
     ? new Date(blog.publishedAt).toLocaleDateString("en-IN", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      })
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
     : null;
 
   return (
@@ -140,8 +144,11 @@ function BlogDetails() {
         )}
 
         {/* Article Content */}
-        <div className="whitespace-pre-wrap break-words text-base leading-8 text-gray-800 dark:text-gray-200">
-          {blog.content}
+        {/* Article Content */}
+        <div className="prose prose-lg max-w-none break-words dark:prose-invert prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white prose-a:text-green-600 prose-strong:font-bold prose-img:rounded-xl">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {blog.content}
+          </ReactMarkdown>
         </div>
 
         {/* Like Button */}
