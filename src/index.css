@@ -111,7 +111,7 @@ code {
 } */
 
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 .glass {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
