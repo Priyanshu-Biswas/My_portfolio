@@ -144,8 +144,12 @@ function BlogDetails() {
         )}
 
         {/* Article Content */}
-        {/* Article Content */}
-        <div className="prose prose-lg max-w-none break-words dark:prose-invert prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white prose-a:text-green-600 prose-strong:font-bold prose-img:rounded-xl">
+        <div className="prose prose-lg max-w-none break-words dark:prose-invert
+  prose-headings:font-extrabold prose-headings:text-gray-900 dark:prose-headings:text-white
+  prose-h1:mt-16 prose-h1:mb-6 prose-h1:text-5xl
+  prose-h2:mt-16 prose-h2:mb-5 prose-h2:text-4xl
+  prose-h3:mt-12 prose-h3:mb-4 prose-h3:text-3xl
+  prose-a:text-green-600 prose-strong:font-bold prose-img:rounded-xl">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {blog.content}
           </ReactMarkdown>
