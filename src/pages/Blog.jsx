@@ -45,7 +45,7 @@ function Blog() {
         <Navber/>
       <div className="mx-auto max-w-7xl">
         {/* Page Heading */}
-        <header className="mb-12 text-center">
+        <header className="mt-12 mb-12 text-center">
           
 
           <h1 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
