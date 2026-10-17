@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 function BlogCard({ blog }) {
@@ -10,29 +9,31 @@ function BlogCard({ blog }) {
       })
     : null;
 
+  const blogUrl = `/blog/${encodeURIComponent(blog.slug)}`;
+
   return (
-    <article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+    <article className="group mx-auto flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl md:w-[80vw] md:flex-row dark:border-gray-700 dark:bg-gray-900">
       {/* Cover Image */}
       <Link
-        to={`/blog/${encodeURIComponent(blog.slug)}`}
-        className="block overflow-hidden"
+        to={blogUrl}
+        className="block shrink-0 overflow-hidden md:w-2/5 lg:w-1/3"
       >
         {blog.coverImage ? (
           <img
             src={blog.coverImage}
             alt={blog.title}
             loading="lazy"
-            className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+            className="h-52 w-full object-cover transition duration-500 group-hover:scale-105 md:h-full md:min-h-64"
           />
         ) : (
-          <div className="flex h-52 items-center justify-center bg-gray-100 text-gray-400 dark:bg-gray-800">
+          <div className="flex h-52 items-center justify-center bg-gray-100 text-gray-400 md:h-full md:min-h-64 dark:bg-gray-800">
             No cover image
           </div>
         )}
       </Link>
 
       {/* Blog Information */}
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-5 md:p-8">
         <div className="mb-3 flex items-center justify-between gap-3 text-sm">
           <span className="rounded-full bg-green-100 px-3 py-1 font-medium text-green-700 dark:bg-green-900/40 dark:text-green-400">
             {blog.category || "Technology"}
@@ -48,19 +49,19 @@ function BlogCard({ blog }) {
           )}
         </div>
 
-        <Link to={`/blog/${encodeURIComponent(blog.slug)}`}>
-          <h2 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-green-600 dark:text-white">
+        <Link to={blogUrl}>
+          <h2 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-green-600 md:text-2xl dark:text-white">
             {blog.title}
           </h2>
         </Link>
 
-        <p className="mb-5 line-clamp-3 leading-7 text-gray-600 dark:text-gray-300">
+        <p className="mb-5 line-clamp-3 leading-7 text-gray-600 md:line-clamp-4 dark:text-gray-300">
           {blog.summary}
         </p>
 
-        <div className="flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-700">
+        <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-700">
           <Link
-            to={`/blog/${encodeURIComponent(blog.slug)}`}
+            to={blogUrl}
             className="font-semibold text-green-600 hover:text-green-700"
           >
             Read article →
