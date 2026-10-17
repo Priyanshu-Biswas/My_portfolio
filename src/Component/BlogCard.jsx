@@ -12,21 +12,21 @@ function BlogCard({ blog }) {
   const blogUrl = `/blog/${encodeURIComponent(blog.slug)}`;
 
   return (
-    <article className="group mx-auto flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl md:w-[80vw] md:flex-row dark:border-gray-700 dark:bg-gray-900">
-      {/* Cover Image (16:9 on desktop) */}
+    <article className="group mx-auto flex w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl md:w-[90vw] md:flex-row dark:border-gray-700 dark:bg-gray-900">
+      {/* Cover Image (16:9 on desktop, centered) */}
       <Link
         to={blogUrl}
-        className="block shrink-0 overflow-hidden md:w-1/2 md:self-center lg:w-[55%]"
+        className="flex shrink-0 items-center justify-center overflow-hidden md:w-1/2 md:self-center lg:w-[55%]"
       >
         {blog.coverImage ? (
           <img
             src={blog.coverImage}
             alt={blog.title}
             loading="lazy"
-            className="h-52 w-full object-cover transition duration-500 group-hover:scale-105 md:aspect-video md:h-auto"
+            className="mx-auto h-52 w-full object-cover transition duration-500 group-hover:scale-105 md:aspect-video md:h-auto"
           />
         ) : (
-          <div className="flex h-52 items-center justify-center bg-gray-100 text-gray-400 md:aspect-video md:h-auto dark:bg-gray-800">
+          <div className="flex h-52 w-full items-center justify-center bg-gray-100 text-gray-400 md:aspect-video md:h-auto dark:bg-gray-800">
             No cover image
           </div>
         )}
