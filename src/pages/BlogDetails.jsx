@@ -144,13 +144,22 @@ function BlogDetails() {
         )}
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none break-words dark:prose-invert
-  prose-headings:font-extrabold prose-headings:text-gray-900 dark:prose-headings:text-white
-  prose-h1:mt-16 prose-h1:mb-6 prose-h1:text-5xl
-  prose-h2:mt-16 prose-h2:mb-5 prose-h2:text-4xl
-  prose-h3:mt-12 prose-h3:mb-4 prose-h3:text-3xl
-  prose-a:text-green-600 prose-strong:font-bold prose-img:rounded-xl">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <div className="break-words text-lg leading-8 text-gray-700 dark:text-gray-300">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h1: (props) => <h1 className="mt-16 mb-6 text-5xl font-extrabold text-gray-900 dark:text-white" {...props} />,
+              h2: (props) => <h2 className="mt-16 mb-5 text-4xl font-extrabold text-gray-900 dark:text-white" {...props} />,
+              h3: (props) => <h3 className="mt-12 mb-4 text-3xl font-bold text-gray-900 dark:text-white" {...props} />,
+              p: (props) => <p className="my-5" {...props} />,
+              ul: (props) => <ul className="my-5 list-disc space-y-2 pl-6" {...props} />,
+              ol: (props) => <ol className="my-5 list-decimal space-y-2 pl-6" {...props} />,
+              a: (props) => <a className="text-green-600 underline" {...props} />,
+              strong: (props) => <strong className="font-bold text-gray-900 dark:text-white" {...props} />,
+              pre: (props) => <pre className="my-6 overflow-x-auto rounded-xl bg-gray-900 p-4 text-sm text-gray-100" {...props} />,
+              code: (props) => <code className="rounded bg-gray-100 px-1.5 py-0.5 text-sm dark:bg-gray-800" {...props} />,
+            }}
+          >
             {blog.content}
           </ReactMarkdown>
         </div>
